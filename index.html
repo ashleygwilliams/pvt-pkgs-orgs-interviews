@@ -8,604 +8,383 @@
   <body>
     <textarea id="source">
 
-class: center, middle
+class: middle, center, title
 
-# you don't know
-![npm logo](public/img/npm.png)
+![npm](public/img/npm.png)
+
+<div class="bluebox">
+<h1>customer convos:</h1>
+<h2>private packages and orgs</h2>
+</div>
+---
+class: middle, center, logos, title
+
+## 11 participants, 11 questions
+
+<div class="whitebox">
+  <img src="public/img/openride.png"/>
+  <img src="public/img/slack.png"/>
+  <img src="public/img/clef.png"/>
+  <img src="public/img/nymag.png"/>
+  <img src="public/img/mapbox.jpg"/>
+</div>
 
 ---
-class: center, middle
+class: middle, center, question
 
-## http://bit.ly/node-live
-### (gh-pages: ashleygwilliams/node-live)
+<div class="bluebox">
+<h2>1. Hi! Can you state your name and what you do?</h2>
+<h2>2. How's your day going?</h2>
+</div>
+---
+class: middle, center, question
+
+<div class="bluebox">
+<h2>3. Tell me the story of npm at your company. What specific problem did you have that private packages and orgs solved?</h2>
+</div>
 
 ---
-class: center, middle, nodetogether
+class: left, middle
 
-![node-together-boston](public/img/nodetogether_boston.jpg)
+> ...[W]e previously had to add partners to our BitBucket account so that we include our packages in their software, this wasn't the best way of doing things and didn't work very well as we got further on and wanting to release more versions of everything.
 
----
-class: center, middle, nodetogether
+> By using private packages we were able to provide these partners access to the versioned set of modules on NPM
 
-# NodeTogether
-<pre>require('all');</pre>
+### Fabian Cook, Shipper NZ
 
 ---
-class: center, middle, nodetogether
+class: left, middle
 
-### tech has a diversity problem
+> We've been node/react server/client since day 1, so we naturally used npm to manage dependencies. Private npm packages let us move code outside our private monorepo, so client and server could depend on specific versions, de-coupling library development from synchronization with the app.
 
----
-class: center, middle, nodetogether
-
-### Node has a diversity problem
+### Phil Schleihauf, OpenRide
 
 ---
-class: center, middle, nodetogether
+class: left, middle
 
-### another Node is possible
+> Mapbox adopted nodejs as the base of a lot of projects early on so npm has always been important to publishing and deployment, but there are also private, usually security related tools that need to end up on the same servers as product code that we can't publish to npm...
 
----
-class: center, middle, nodetogether
-
-![node-together-london](public/img/nodetogether_london.jpg)
+### Karen Shea, MapBox
 
 ---
-class: center, middle, nodetogether
+class: left, middle
 
-![LA](public/img/la.jpg)
+> We had developed internal infrastructure for publishing and distributing these private modules, but having them available through npm the same way as public modules is much more convenient because of semver support and less overhead to onboard new team members, i.e. new people only have to learn npm (or not, if they were already familiar!) rather than npm and our internal system.
 
----
-class: center, middle, nodetogether
-
-![bangalore](public/img/bangalore.jpg-large)
+### Karen Shea, MapBox
 
 ---
-class: center, middle, nodetogether
+class: left, middle
 
-![paris](public/img/paris.jpg)
+> Our product are two mobile apps, for iOS and Android. We write some logic in JavaScript, so that we don't have to do it twice on both platforms and can share it. Using a real package manager to handle that, instead of someone going from time to time "hey, we should maybe update the JS in the apps, huh" is pretty nice :)
 
----
-class: center, middle, nodetogether
-
-### we need your help
+### Jan Klausa, Clue
 
 ---
-class: center, middle, nodetogether
+class: middle, center, question
 
-# NodeTogether
-## http://www.nodetogether.org
-## @node_together
-
----
-class: center, middle
-
-# you don't know
-![npm logo](public/img/npm.png)
----
-class: center, middle, stats
-background-image: url(public/img/pbn_ducks.jpg)
-background-color: #FFE4C4
-
-# everyday around 1,800,000 install events occur.
+<div class="bluebox">
+<h2>4. Can you tell us a story about a specific package you wanted to make that private packages really enabled you to do?</h2>
 
 ---
-class: center, middle, stats
-background-image: url(public/img/pbn_ducks.jpg)
-background-color: #FFE4C4
+class: left, middle
 
-# each install is around 70 packages.
+> We wrote our own testing framework. The intent was to open-source it eventually, but keeping it private let us design it in private, slack on documentation, not fix bugs, etc., until we had a solid design to clean up and release publicly.
 
----
-class: center, middle, stats
-background-image: url(public/img/pbn_ducks.jpg)
-background-color: #FFE4C4
-
-# 1,800,000 * 70
+### Phil Schleihauf, OpenRide
 
 ---
-class: center, middle, stats
-background-image: url(public/img/pbn_ducks.jpg)
-background-color: #FFE4C4
+class: left, middle
 
-# .real-big[126,000,000]
+> The API client. It was just an easier way to allow other projects/teams at the company integrate with an API.
 
----
-class: center, middle, stats
-background-image: url(public/img/pbn_ducks.jpg)
-background-color: #FFE4C4
-
-# that's a lot of packages
+### Rob Tirserio, Remedy Health Media
 
 ---
-class: center, middle
+class: left, middle
 
-# hi my name is @ag_dubs
-![space invader](public/img/spaceinvader.png)
-![ghost](public/img/ghost.png)
-![dolphin](public/img/dolphin.png)
+> In the Desktop app, we actually use private packages in a somewhat unusual way...
 
----
-class: center, middle
-
-![jeans](public/img/jeans.png)
-![scissors](public/img/scissors.png)
-![cool](public/img/sunglasses.png)
-
-
-![escalator](public/img/escalator2.gif)
----
-class: center, middle
-
-# developer community and content manager
+### Paul Betts, Slack
 
 ---
-class: center, middle
+class: left, middle
 
-# ?????lolwat
-![confused malmutes](public/img/confused.gif)
+> [W]e need to ship precompiled versions of our modified WebRTC, and to interface it with Electron, we write a native node module. We found that the easiest way to get that node module to have the versions of WebRTC it needed, was to make WebRTC itself a npm package, so that npm install just pulls everything in correctly and builds the Calls native module. Who knew that npm is a great C++ package system :)
 
----
-class: center, middle
-
-# if you don't understand how npm works
-![fire](public/img/fire.png)
-![fire](public/img/fire.png)
-![fire](public/img/fire.png)
+### Paul Betts, Slack
 
 ---
-class: center, middle
+class: middle, center, question
 
-# that's my problem
-
-![grimacing](public/img/grimacing.png)
-
----
-class: center, middle
-
-# my job is to make *sense*
-![money](public/img/money.png)
+<div class="bluebox">
+<h2>5. Does your company do open source? How do you negotiate what you keep private and public? (Feel free to be as vague as you need to be)</h2>
+</div>
 
 ---
-class: center, middle, stats
-background-image: url(public/img/pbn_ducks.jpg)
-background-color: #FFE4C4
+class: left, middle
 
-![biggest day](public/img/biggest_day.png)
+> Our general rule of thumb is to work in the open from the get-go because it's easier to keep a project open than it is to later open a closed project. However, sometimes in the interest of time, security, or bizness we develop projects privately, too.
 
----
-class: center, middle, stats
-background-image: url(public/img/pbn_ducks.jpg)
-background-color: #FFE4C4
-
-# more than 1.2 billion downloads over a week
+### Karen Shea, MapBox
 
 ---
-class: center, middle, stats
-background-image: url(public/img/pbn_ducks.jpg)
-background-color: #FFE4C4
+class: left, middle
 
-![one billion](public/img/billion.jpg-large)
+> Generally, we choose to make things private when they don't make sense for other people - i.e. if it has a change specific to our setup. We don't want people to find a package and think, "Oh, this @slack version must be better / endorsed by Slack!" but instead it's just weird and broken.
 
----
-class: center, middle, stats
-background-image: url(public/img/pbn_ducks.jpg)
-background-color: #FFE4C4
-
-![numbers](public/img/numbers.png)
+### Paul Betts, Slack
 
 ---
-class: center, middle, stats
-background-image: url(public/img/pbn_ocean.jpg)
-background-color: #FFE4C4
+class: left, middle
 
-![module counts](public/img/module-counts.png)
+> Yes. We discuss it case-by-case. We're definitely biased toward open-sourcing everything, but we also like to release things that we feel meet a level of quality that we're happy with, and things that we intend to maintain.
 
-.citation[source: http://modulecounts.com, accessed: 14 apr 2016]
+### Phil Schleihauf, OpenRide
 
 ---
-class: center, middle, stats
-background-image: url(public/img/pbn_ocean.jpg)
-background-color: #FFE4C4
+class: middle, center, question
 
-# npm is the LARGEST PACKAGE MANAGER IN THE WORLD.
-
----
-class: center, middle
-
-## stuff everybody knows
-# `npm install`
-
----
-class: center, middle
-
-## stuff not everyone knows
-![i dont know](public/img/idontknow.gif)
-
----
-class: top, left
-
-## create a package.json
-# `npm init`
-
-- ### knows your deps from node_modules
-- ### knows your repository from git repo
-- ### always adds keys, never deletes
-
-![chick](public/img/chick.png)
-
----
-class: top, left
-
-## create a package.json with defaults
-# `npm init --yes`
-
-![yes](public/img/yes.gif)
-
----
-class: top, left
-
-## customize npm init questions
-# `~/.npm-init.js`
-
-### enforce license and best practices 
-
-![question](public/img/question.png)
-![art](public/img/art.png)
-![question](public/img/question.png)
-
----
-class: top, left
-
-## add deps from the CLI
-# `npm i --save`
-# `npm i --save-dev`
-
-![disk](public/img/disk.png)
-![disk](public/img/disk.png)
-![disk](public/img/disk.png)
-
----
-class: top, left
-
-## add deps from the CLI
-# `npm i -S` 
-# `npm i -D` 
-
-![disk](public/img/disk.png)
-![disk](public/img/haircut.png)
-![disk](public/img/disk.png)
-
----
-class: center, middle
-
-## just not connecting with npm3?
-
-![pup fail](public/img/pup_fail.gif)
-
-<div></div>
-
----
-class: middle, center
-
-## how npm3 works
-
-![npm3](public/img/npm3.png)
-
-https://docs.npmjs.com/how-npm-works/npm3
+<div class="bluebox">
+<h2>6. To people who are unsure what they could use private packages for- how would you explain the use case?</h2>
+</div>
 
 ---
 class: middle, left
 
-## show the dep tree
-# `npm ls`
+> I think the main use case is sharing your work privately with no hidden costs like infrastructure maintenance. It's also nice to know I can easily open source a project any time by flipping a button.
 
-![list](public/img/clipboard.png)
-![tree](public/img/tree.png)
-![list](public/img/clipboard.png)
+### Maximilian Antoni, JavaScript Studio
 
 ---
 class: middle, left
 
-## show just primary deps
-# `npm ls --depth=0`
+> Security, for platform infrastructure and user privacy, but with the convenience of open project management. Sharing source code for a cool shader is one thing, sharing a project that is a wrapper around cloud provider account access is another.
 
-![list](public/img/clipboard.png)
-![list](public/img/seedling.png)
-![list](public/img/clipboard.png)
+### Karen Shea, MapBox
 
 ---
-class: top, left
+class: middle, left
 
-## npm... global cache?
-# `.npm/`
-## modules are stored in the home directory
+> In an organization where you have multiple projects sharing dependencies that shouldn’t be public (for any reason, including legal issues), it just makes sense to build those dependencies just like “normal” ones, and limit access to them so they’re not public, but still work with the toolchain.
 
-### ... but you can't use this offline because it still hits the network
+### Revin Guillen, EllieMae, Inc
 
 ---
-class: top, left
+class: middle, left
 
-## npm install offline
-### `npm install --cache-min 999999`
+> To me, the killer use-case is code reuse. Moving shared code to a library vastly decreases friction around updating that library -- it can have its own fast CI, its own releases whenever it wants, and app code can upgrade to the latest version at leisure. It's nice to be able to get that for code that's not suitable for open-source, whether because it's too domain-specific, just-not-ready, or whatever.
 
-### we should probably just alias this to:
-### `npm install --offline`
-
-![money](public/img/cash.png)
-![money](public/img/cash.png)
-![money](public/img/cash.png)
+### Phil Schleihauf, OpenRide
 
 ---
-class: top, left
+class: middle, center, question
 
-## npm install offline
-# `npm pack`
-## `npm install my-pkg.tgz`
-### create a tarball out of any package and then use install directly on the tarball
-
-![shirt](public/img/shirt.png)
-![soon](public/img/soon.png)
-![suitcase](public/img/suitcase.png)
+<div class="bluebox">
+<h2>7. How's it going? How's the day to day experience of using private packages/orgs?</h2>
+</div>
 
 ---
-class: top, left
+class: middle, left
 
-## pack your deps!
-# `bundledDependencies`
-### pack doesn't add your pkg's deps BUT
-### bundled deps are added to the tarball!
+> We don’t have a ton so manage to it's pretty easy. It's nice to only have to tell everyone a version number to change in their project when new changes go out.
 
-![suitcase](public/img/suitcase.png)
-![soon](public/img/soon.png)
-![suitcase](public/img/suitcase.png)
+### Rob Tirserio, Remedy Health Media
 
 ---
-class: middle, left, dependencies
+class: middle, left
 
-- ## `dependencies` ![juggling](public/img/juggling.png)
-- ## `devDependencies` ![hammer wrench](public/img/hammer_wrench.png)
-- ## `optionalDependencies` ![ghost](public/img/shrug.png)
-- ## `peerDependencies` ![plug](public/img/plug.png)
+> Once we got internal docs written on how to get people using them it's been a smooth ride.
 
----
-class: top, left
-
-## lock down your deps
-# `npm shrinkwrap`
-
-![shrinkwrap](public/img/shrinkwrap.gif)
+### Karen Shea, MapBox
 
 ---
-class: top, left
+class: middle, left
 
-## lock down your deps
-# `npm shrinkwrap`
+> Honestly, it needs work here, but that’s entirely self-inflicted. Because not everyone fully 1) understands, or 2) buys into Full Semver™, there’s a history of people introducing breaking changes in minor (or even patch!) versions, or running two concurrent major versions that each are only compatible with one particular consuming app, or lots of issues like that.
 
-- ### deploy to production EXACTLY what you used in dev
-- ### locks every version of every package and all dependencies in node_modules
-
-![lock](public/img/lock.png)
-![lock](public/img/lock.png)
-![lock](public/img/lock.png)
+### Revin Guillen, EllieMae, Inc
 
 ---
-class: top, left
+class: middle, left
 
-## update your shrinkwrap
-# `--save` and `--save-dev`
+> I have open source projects I contribute to on the same laptop as my work projects, so managing my two different npm logins can be kind of finicky. I usually end up copying around the .npmrc from each work project; some are maintained by a shared npm account, some are maintained by my own @elliemae npm org account, and it’s not always clear to me which ones will work where. 
 
-### - don't need to shrinkwrap everytime
-### - new with npm3!
-
-![lock-pen](public/img/lock-pen.png)
-![new](public/img/new.png)
-![lock-pen](public/img/lock-pen.png)
+### Revin Guillen, EllieMae, Inc
 
 ---
-class: center, middle
+class: middle, left
 
-# why not a default feature?
+> Good. There is friction -- new devs need to have npm accounts and permissions have to be set up for them. CI and build pipelines need to log in to pull the private dependencies, which required some hacks when we set it up. But those are all fixed-cost (or per-dev) items, and the benefits are worth it.
 
----
-class: middle, center
-
-# we believe in semver
-
-![want to believe](public/img/wanttobelieve.jpg)
+### Phil Schleihauf, OpenRide
 
 ---
-class: top, left
+class: middle, left
 
-## semver made easy
-# `npm version <type>`
-### `types: major, minor, patch`
+> Going pretty good, had a couple of hiccups were I have accidentally made a private package public, apart from that its been good.
 
-- ### major: breaking changes
-- ### minor: feature add
-- ### patch: bug fix, docs
+### Fabian Cook, Shipper NZ
 
 ---
-class: top, left
+class: middle, left
 
-## automate all the things 
-# `npm run $anything`
+> It's 100% reliable. I never had a single service issue. It just works™.
 
-### - `test`, `start`
-### - customize!
-![theater](public/img/theater.png)
-![runner](public/img/runner.png)
-![theater](public/img/theater.png)
+### Maximilian Antoni, JavaScript Studio
 
 ---
-class: middle, center
+class: middle, center, question
 
-# lifecycle events
-## automation that is context aware
-
-![seedling](public/img/seedling.png)
-![plant](public/img/plant.png)
-![tree](public/img/tree.png)
+<div class="bluebox">
+<h2>8. How would you see the product improved or expanded in the future?</h2>
+</div>
 
 ---
-class: middle, center
+class: middle, left
 
-# run scripts are composable!
+> This may already exist in a simpler form and only needs me to go looking for it, but managing multiple logins (and possibly even multiple registries) on a per-project basis easily would be nice.
 
-![score](public/img/score.png)
-![score](public/img/score.png)
-![score](public/img/score.png)
+### Revin Guillen, EllieMae, Inc
 
 ---
-class: middle, center
+class: middle, left
 
-# get stuff for free
+> It'd be cool to think about how to support the "Temporary scoped package to work around PR" workflow ...Might be a little too heavy for npm, inc to do, but thinking about that use-case of "scoped packages for temporary forks, that go away after awhile" would be something to explore.
 
-### `devDependencies` are in path
-### `config` and `package.json` as variables
-
-![sparkles](public/img/sparkles.png)
-![free](public/img/free.png)
-![sparkles](public/img/sparkles.png) 
+### Paul Betts, Slack
 
 ---
-class: middle, center
+class: middle, left
 
-# scoped packages
-## (fancy way of saying namespaced packages!)
+> i have few nitpicks about the web interface (getting to the private package takes way to many clicks and i'd love to see a version history), but otherwise i can't say i've noticed any problems
 
----
-class: top, left
-
-## scoped packages
-# `npm i @scope/name`
-
-![telescope](public/img/telescope.png)
-
---
-
-### scoped packages are private by default but you can make them public:
-### `npm publish --access=public`
+### Jan Klausa, Clue
 
 ---
-class: middle, center
+class: middle, left
 
-# npm private modules
-![lock](public/img/lock.png)
+> oh; there was an issue earlier this year when the person who set up the org left the company. I remember people complaining about the process of transferring the ownership being a PITA, but I wasn't super involved with that so I don't really remember the specifics :(
 
---
-
-### (it's recursive! get it? get it?)
-
---
-
-npmnpmnpmnpmnpmnpmlolololololol
+### Jan Klausa, Clue
 
 ---
-class: top, left
+class: middle, left
 
-## private modules
-## `npm init --scope=<usrname>`
+> Maybe anti-user-error fallbacks, for when private projects accidentally get published publicly!
 
-### Use your private modules side by side with modules from the public registry
-
-![dancers](public/img/dancers.png)
- 
----
-class: middle, center
-
-# managing access is hard...
-![fail](public/img/fail.gif)
+### Karen Shea, MapBox
 
 ---
-class: top, left
+class: middle, left
 
-## npm organizations
-# `npm team`
+> We have "private" in the package.json files, would be good to have "protected" or something along the lines were we can only publish it as private
 
-- ### create teams and add members 
-- ### grant and revoke access to packages via scopes
-
-![team](public/img/team.png)
+### Fabian Cook, Shipper NZ
 
 ---
-class: top, left
+class: middle, left
 
-# npm on-site
-## run your own on-premises npm registry
-### `npm login`
-### ` --registry=http://reg.amazing.com`
+> Being able to get more info from the org packages list page would be nice. I do appreciate the simplicity of the site ease of releasing/updating modules.
 
-![office](public/img/office.png)
-![runner](public/img/runner.png)
+### Rob Tirserio, Remedy Health Media
 
 ---
-class: middle, center
+class: middle, left
 
-![npme addons](public/img/npme-addon.png)
+> A nice feature would be notifications, like desktop notifications or Slack integration. If someone publishes a module in my org, I'd like to be notified.
 
----
-class: middle, center
-
-## you want more
-![insatiable](public/img/insatiable.gif)
+### Maximilian Antoni, JavaScript Studio
 
 ---
-class: middle, center
+class: middle, center, question
 
-## the npm CLI and Registry are for and by the community
-
-![lightbulb](public/img/lightbulb.png)
-![lightbulb](public/img/lightbulb.png)
-![lightbulb](public/img/lightbulb.png)
+<div class="bluebox">
+<h2>9. Would you recommend that another org or company use private packages or orgs and why?</h2>
+</div>
 
 ---
-class: middle, center
+class: middle, left
 
-## https://github.com/npm/registry/
-![registry-repo](public/img/registry-repo.png)
+> Of course, if you need them they work great, and they don't have the weirdo problems that pinning to git revisions have like certain npm scripts not running.
 
----
-class: middle, center
-
-# write a registry follower
-
-![registry follower](public/img/follower.png)
-
-https://github.com/npm/registry/blob/master/docs/follower.md
+### Paul Betts, Slack
 
 ---
-class: middle, center
+class: middle, left
 
-# https://replicate.npmjs.com
+> yes; "please stop copy-pasting files between repos"
 
----
-class: middle, center
-
-![npmstatus](public/img/npmstatus.png)
+### Jan Klausa, Clue
 
 ---
-class: middle, center
+class: middle, left
 
-![the more you know](public/img/moreyouknow.jpg)
+> Yes, absolutely. One of my biggest development philosophies is to choose tools that work with the grain of how you want to work, and work with the grain of your tools. npm based workflow is a successful model, so if you can’t make all your code public, it’s the perfect way to still use your nice tools without jumping through unnecessary hoops.
 
----
-class: middle, center
-
-# .real-big[npm <img src="public/img/sparkle-heart.png" id="heart" />s  you]
+### Revin Guillen, EllieMae, Inc
 
 ---
-class: center, middle
+class: middle, left
 
-# thanks!
-## `me => @ag_dubs`
+> I would recommend everyone to use npm and modules in general. Keeping things small and focused makes things easier to manage and maintain. It also increases the chance that something is identified as a candidate to be released to the community. 
 
-## bit.ly/node-live
+### Rob Tirserio, Remedy Health Media
 
-![space invader](public/img/spaceinvader.png)
-![ghost](public/img/ghost.png)
-![dolphin](public/img/dolphin.png)
+---
+class: middle, left
 
+> Definitely, I've used them with 4 companies now, its been great, no reason not to use them.
+
+### Fabian Cook, Shipper NZ
+
+---
+class: middle, center, question
+
+<div class="bluebox">
+<h2>10. Any questions I didn't ask that you wish I did? Please ask/answer them here!</h2>
+</div>
+---
+class: middle, left
+
+> Q: What's the difference between a hippo and a zippo? A: One's really heavy, the other is a little lighter.
+
+### Phil Schleihauf, OpenRide
+
+---
+class: middle, left
+
+> Nope, we're a fairly non-trivial project and npm's CLI and package system has always had an answer for everything we've thrown at it, including per-platform packages. It's really great.
+
+### Paul Betts, Slack
+
+---
+class: middle, center, question
+
+<div class="bluebox">
+<h2>11. Any cool npm stuff your company has done publicly that you'd like to promote?</h2>
+</div>
+
+---
+class: middle, left
+
+> Our only significant open source module is contentpull https://www.npmjs.com/package/contentpull which started as an internal module and we decided to release it. Its just a wrapper for the Contentful CMS but we rely on it heavily.
+
+### Rob Tierso, Remedy Health Media
+
+---
+class: middle, left
+
+> I wish there were things I can put out there at this time, we are still learning the ropes in our industry, trying to get through it all!
+
+### Fabian Cook, Shipper NZ
+
+---
+class: middle, center, title
+
+<div class="bluebox">
+  <h1>tl;dr people <3 npm</h1>
+</div>
   </textarea>
     <script src="public/remark.js" type="text/javascript">
     </script>
